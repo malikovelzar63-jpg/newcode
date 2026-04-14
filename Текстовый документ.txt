@@ -1,0 +1,79 @@
+import time
+
+views = 0
+
+
+def loading(text):
+    print(text + "...")
+    time.sleep(1)
+
+
+def show_menu():
+    print("\n=== DESIGN MENU ===")
+    print("1 - Poster Design")
+    print("2 - Movie Posters")
+    print("3 - Branding")
+    print("0 - Exit")
+    print("Views:", views)
+
+
+while True:
+    show_menu()
+
+    try:
+        choice = input("Choose: ")
+
+        if choice == "0":
+            print("Goodbye!")
+            break
+
+        elif choice == "1":
+            print("\nPoster Design:")
+            print("1 - Minimal Poster")
+            print("2 - Typography Poster")
+
+            sub = input("Choose: ")
+
+            if sub == "1":
+                loading("Opening Minimal Poster")
+                print("Simple, clean design. Calm style.")
+                views += 1
+
+            elif sub == "2":
+                loading("Opening Typography Poster")
+                print("Focus on text and fonts.")
+                views += 1
+
+            else:
+                print("Wrong choice")
+
+        elif choice == "2":
+            print("\nMovie Posters:")
+            print("1 - Horror")
+            print("2 - Sci-Fi")
+
+            sub = input("Choose: ")
+
+            if sub == "1":
+                loading("Opening Horror Poster")
+                print("Dark and scary design.")
+                views += 1
+
+            elif sub == "2":
+                loading("Opening Sci-Fi Poster")
+                print("Futuristic neon style.")
+                views += 1
+
+            else:
+                print("Wrong choice")
+
+        elif choice == "3":
+            loading("Opening Branding")
+            print("Logos, colors, brand style.")
+            views += 1
+
+        else:
+            print("Wrong choice")
+
+    except Exception:
+        print("Error! Try again.")
